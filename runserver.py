@@ -1,3 +1,4 @@
+#!/bin/python
 from cloud import app
 
 if __name__ == '__main__':

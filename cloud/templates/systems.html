@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
-{% block body %}
+{% block section %}
+<div id="section">
 <ul>
     {% for system in systems %}
-    <li>{{ system.name }}</li>
+    <li>System Name: {{ system.name }}, Status: {{ system.status }}, NetBoot: {{ system.netboot_enabled }}</li>
     {% endfor %}
 </ul>
+</div>
 {% endblock %}

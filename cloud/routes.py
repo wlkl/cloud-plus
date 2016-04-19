@@ -11,7 +11,7 @@ def index():
 
 @app.route('/systems')
 def system():
-    allsys = handle.systems
+    allsys = handle.systems()
     return render_template('systems.html', systems=allsys)
 
 
