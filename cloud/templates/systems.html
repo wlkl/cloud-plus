@@ -3,7 +3,7 @@
 <div id="section">
 <ul>
     {% for system in systems %}
-    <li>System Name: {{ system.name }}, Status: {{ system.status }}, NetBoot: {{ system.netboot_enabled }}</li>
+    <li>{{ system.name }} <input type="checkbox" name="netboot" value="" checked></li>
     {% endfor %}
 </ul>
 </div>
