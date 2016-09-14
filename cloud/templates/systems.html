@@ -2,8 +2,8 @@
 {% block section %}
 <div id="section">
 <ul>
-    {% for system in systems %}
-    <li>{{ system.name }} <input type="checkbox" name="netboot" value="" checked></li>
+    {% for system in sys_all %}
+    <li>{{ system.name }} {{ system.netboot_enabled}}<input type="checkbox" name="netboot" value="" checked></li>
     {% endfor %}
 </ul>
 </div>

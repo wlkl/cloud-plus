@@ -1,6 +1,6 @@
 from cloud import app
 from flask import render_template
-from pxeserver.pxe import handle
+from pxeserver.pxe import handle, systems
 
 
 
@@ -11,8 +11,7 @@ def index():
 
 @app.route('/systems')
 def system():
-    allsys = handle.systems()
-    return render_template('systems.html', systems=allsys)
+    return render_template('systems.html', sys_all=systems)
 
 
 @app.route('/config')
