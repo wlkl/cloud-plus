@@ -15,3 +15,6 @@ def system():
     return render_template('systems.html', systems=allsys)
 
 
+@app.route('/config')
+def config():
+    return render_template('config.html')
