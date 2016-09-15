@@ -1,5 +1,5 @@
 from cloud import app
-from flask import render_template
+from flask import render_template, request
 from pxeserver.pxe import handle, systems
 
 
@@ -9,8 +9,12 @@ def index():
     return render_template('layout.html')
 
 
-@app.route('/systems')
+@app.route('/systems', methods=['POST', 'GET'])
 def system():
+    if request.method == 'POST':
+        sys = request.form.getlist('cur_sys')
+        sys.netboot_enabled = True
+        handle.add_system(sys)
     return render_template('systems.html', sys_all=systems)
 
 
