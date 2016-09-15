@@ -1,10 +1,12 @@
 {% extends "layout.html" %}
 {% block section %}
 <div id="section">
-<ul>
+    <form action="" method="post">
+        <ul>
     {% for system in sys_all %}
-    <li>{{ system.name }} {{ system.netboot_enabled}}<input type="checkbox" name="netboot" value="NetBoot Enabled" checked></li>
+    <li>{{ system.name }}<input type="checkbox" name="netboot" value="{{ system.name }}" {% if nb_enable %} checked {% endif %}></li>
     {% endfor %}
-</ul>
+        </ul>
+    </form>
 </div>
 {% endblock %}

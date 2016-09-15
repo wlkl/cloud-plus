@@ -11,7 +11,7 @@ def index():
 
 @app.route('/systems')
 def system():
-    return render_template('systems.html', sys_all=systems)
+    return render_template('systems.html', sys_all=systems, nbenable=True)
 
 
 @app.route('/config')
