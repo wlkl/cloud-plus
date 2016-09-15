@@ -13,8 +13,9 @@ def index():
 def system():
     if request.method == 'POST':
         sys = request.form.getlist('cur_sys')
-        sys.netboot_enabled = True
-        handle.add_system(sys)
+        print(sys)
+#        sys.netboot_enabled = True
+#        handle.add_system(sys)
     return render_template('systems.html', sys_all=systems)
 
 
