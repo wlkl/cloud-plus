@@ -12,8 +12,9 @@ def index():
 @app.route('/systems', methods=['POST', 'GET'])
 def system():
     if request.method == 'POST':
-        sys = handle.find_system(name=request.form.getlist('cur_sys'))
-        print(sys)
+        sysname=request.form.getlist('cur_sys')
+        print(sysname)
+#        sys = handle.find_system(name=request.form.getlist('cur_sys'))
 #        sys.netboot_enabled = True
 #        handle.add_system(sys)
     return render_template('systems.html', sys_all=systems)
