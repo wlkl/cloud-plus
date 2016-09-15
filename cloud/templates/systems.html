@@ -4,7 +4,7 @@
     <form action="" method="post">
         <ul>
     {% for system in sys_all %}
-    <li>{{ system.name }}<input type="checkbox" name="netboot" value="{{ system.name }}" {% if nb_enable %} checked {% endif %}></li>
+    <li>{{ system.name }}<input type="checkbox" name="netboot" value="{{ system.name }}" {% if system.netboot_enabled %} checked {% endif %}></li>
     {% endfor %}
         </ul>
     </form>
