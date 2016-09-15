@@ -14,8 +14,8 @@ def system():
     if request.method == 'POST':
         sys = handle.find_system(name=request.form.getlist('cur_sys'))
         print(sys)
-        sys.netboot_enabled = True
-        handle.add_system(sys)
+#        sys.netboot_enabled = True
+#        handle.add_system(sys)
     return render_template('systems.html', sys_all=systems)
 
 
