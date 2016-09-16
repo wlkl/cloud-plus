@@ -19,7 +19,7 @@ def system():
             else:
                 s.netboot_enabled = False
             handle.add_system(s)
-    return render_template('systems.html')
+    return render_template('systems.html', all_systems=systems)
 
 
 @app.route('/config')
