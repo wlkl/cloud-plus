@@ -3,10 +3,10 @@
 <div id="section">
     <form action="" method="post">
         <p>Name Netboot</p>
-    <p>{% for system in sys_all %}
-       {{ system.name }}<input type="checkbox" name="cur_sys" value="{{ system.name }}" {% if system.netboot_enabled %} checked {% endif %}>
+    {% for system in sys_all %}
+       <p>{{ system.name }}<input type="checkbox" name="cur_sys" value="{{ system.name }}" {% if system.netboot_enabled %} checked {% endif %}></p>
+       <input type="submit" value="Отправить">
     {% endfor %}
-        <input type="submit" value="Отправить"></p>
     </form>
 </div>
 {% endblock %}
