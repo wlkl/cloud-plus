@@ -22,7 +22,7 @@ def system():
     return render_template('systems.html', all_systems=systems)
 
 
-@app.route('/config')
+@app.route('/config', methods=['POST', 'GET']))
 def config():
     if request.method == 'POST':
         sysname = request.form.getlist('cur_sys')
