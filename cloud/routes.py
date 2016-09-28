@@ -1,18 +1,17 @@
 from cloud import app
 from flask import render_template, request
-from pxeserver.pxe import handle
+from pxeserver.pxe import handle, systems
 
 
 
 @app.route('/')
 def index():
-    return render_template('layout.html')
+    return render_template('home.html')
 
 
 @app.route('/systems', methods=['POST', 'GET'])
 def system():
     if request.method == 'POST':
-        systems = handle.find_system(name="*", return_list=True)
         sysname = request.form.getlist('cur_sys')
         for s in systems:
             if s.name in sysname:
@@ -25,4 +24,9 @@ def system():
 
 @app.route('/config')
 def config():
-    return render_template('config.html')
+    if request.method == 'POST':
+        sysname = request.form.getlist('cur_sys')
+        for s in systems:
+            if s.name in sysname:
+                handle.remove_system(s.name)
+    return render_template('config.html', all_systems=systems)

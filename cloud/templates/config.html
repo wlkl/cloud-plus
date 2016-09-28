@@ -1,6 +1,12 @@
 {% extends "layout.html" %}
 {% block section %}
 <div id="section">
-Config
+    <form action="" method="post">
+        <p>Name delete</p>
+    {% for system in  all_systems %}
+       <p>{{ system.name }}<input type="checkbox" name="cur_sys" value="{{ system.name }}"></p>
+    {% endfor %}
+        <input type="submit" value="удалить">
+    </form>
 </div>
 {% endblock %}
