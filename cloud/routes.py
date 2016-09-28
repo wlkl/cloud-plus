@@ -1,6 +1,6 @@
 from cloud import app
 from flask import render_template, request
-from pxeserver.pxe import handle, systems
+from pxeserver.pxe import handle
 
 
 
@@ -12,6 +12,7 @@ def index():
 @app.route('/systems', methods=['POST', 'GET'])
 def system():
     if request.method == 'POST':
+        systems = handle.find_system(name="*", return_list=True)
         sysname = request.form.getlist('cur_sys')
         for s in systems:
             if s.name in sysname:
