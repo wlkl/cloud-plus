@@ -9,16 +9,8 @@ def index():
     return render_template('home.html')
 
 
-@app.route('/systems', methods=['POST', 'GET'])
+@app.route('/systems')
 def system():
-    if request.method == 'POST':
-        sysname = request.form.getlist('cur_sys')
-        for s in systems:
-            if s.name in sysname:
-                s.netboot_enabled = True
-            else:
-                s.netboot_enabled = False
-            handle.add_system(s)
     return render_template('systems.html', all_systems=systems)
 
 
