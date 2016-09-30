@@ -13,6 +13,10 @@ def index():
 def system():
     return render_template('systems.html', all_systems=systems)
 
+@app.route('/config-system')
+def config_system():
+    return render_template('config_system.html')
+
 
 @app.route('/config', methods=['POST', 'GET'])
 def config():
