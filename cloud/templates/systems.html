@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% block section %}
 <div id="section">
-        <p>Name Netboot</p>
+        <p>Name</p>
     {% for system in  all_systems %}
-       <p>{{ system.name }}</p>
+       <p><a htef="{{url_for({{ system.name }})}}">{{ system.name }}</a></p>
     {% endfor %}
 </div>
 {% endblock %}
