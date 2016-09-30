@@ -3,7 +3,8 @@
 <div id="section">
         <p>Name</p>
     {% for system in  all_systems %}
-       <p><a href="{{ url_for('config_system', name='name')}}">{{ system.name }}</a></p>
+       name = {{system.name}}
+       <p><a href="{{ url_for('config_system', name=name)}}">{{ system.name }}</a></p>
     {% endfor %}
 </div>
 {% endblock %}
